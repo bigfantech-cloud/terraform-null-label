@@ -168,7 +168,7 @@ project_name
 
 # Steps to use the module
 
-1. Copy `context.tf` file from https://github.com/bigfantech/terraform-null-label/blob/main/exports/ and place it along with your Terraform configs.
+1. Copy `context.tf` file from https://github.com/bigfantech-cloud/terraform-null-label/blob/main/exports/ and place it along with your Terraform configs.
 
 2. Start refering to the null-label outputs in your Terrafrom config.
 
@@ -180,7 +180,7 @@ provider "aws {
 }
 
 module "main-vpc" {
-  source      = "app.terraform.io/bigfantech/vpc/aws"
+  source      = "bigfantech-cloud/vpc/aws"
   version     = "1.0.0"
 
   vpc_cidr       = "10.0.0.0/20"
