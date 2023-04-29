@@ -166,29 +166,19 @@ This is customised version of `label` module from cloudposse. Courtesy: [cloudpo
 
 ```
 
-## Resources created:
-
-    N/A
-
-## Resources naming convention:
-
-    M/A
-
-# Steps to use the module
+# Usage example of this module
 
 1. Copy `context.tf` file from https://github.com/bigfantech-cloud/terraform-null-label/blob/main/exports/ and place it along with your Terraform configs.
 
 2. Start refering to the null-label outputs in your Terrafrom config.
-
-Example:
 
 ```
 provider "aws {
   region = "us-east-1"
 }
 
-module "main-vpc" {
-  source      = "bigfantech-cloud/vpc/aws"
+module "network" {
+  source      = "bigfantech-cloud/network/aws"
   version     = "1.0.0"
 
   vpc_cidr       = "10.0.0.0/20"
@@ -209,7 +199,7 @@ resource "aws_s3_bucket" "default" {
 
 ```
 
-## OUTPUTS
+### Outputs
 
 ```
 - id:
