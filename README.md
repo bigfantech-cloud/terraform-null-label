@@ -184,10 +184,11 @@ module "network" {
   vpc_cidr       = "10.0.0.0/20"
   project_name   = "abc"
   environment    = "dev"
+  attributes     = ["test", "bucket"]
 }
 
 resource "aws_s3_bucket" "default" {
-  bucket        = module.this.id
+  bucket        = module.this.id # This will get "abc-dev-test-bucket"
 
   tags = merge(
     module.this.tags,
@@ -201,62 +202,22 @@ resource "aws_s3_bucket" "default" {
 
 ### Outputs
 
-```
-- id:
-    Disambiguated ID string restricted to `id_length_limit` characters in total
-
-- id_full:
-    ID string not restricted in length
-
-- enabled:
-    True if module is enabled, false otherwise
-
-- project_name:
-    Normalized project_name
-
-- aws_estate:
-    Normalized aws_estate
-
-- environment:
-    Normalized environment
-
-- stage:
-    Normalized stage
-
-- delimiter:
-    Delimiter between `project_name`, `aws_estate`, `environment`, `stage`, and `attributes`
-
-- attributes:
-    List of attributes
-
-- tags:
-    Normalized Tag map
-
-- additional_tag_map:
-    The merged additional_tag_map
-
-- label_order:
-    The naming order actually used to create the ID
-
-- regex_replace_chars:
-    The regex_replace_chars actually used to create the ID
-
-- id_length_limit:
-    The id_length_limit actually used to create the ID, with `0` meaning unlimited
-
-- tags_as_list_of_maps:
-    This is a list with one map for each `tag`. Each map contains the tag `key`,
-    `value`, and contents of `var.additional_tag_map`. Used in the rare cases
-    where resources need additional configuration information for each tag.
-
-- descriptors:
-    "Map of descriptors as configured by `descriptor_formats`
-
-- normalized_context:
-    Normalized context of this module
-
-- context:
-    Merged but otherwise unmodified input to this module, to be used as context input to other modules.
-    Note: this version will have null values as defaults, not the values actually used as defaults.
-
-```
+| Name                 | Description                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------- |
+| id                   | String created combining all the input labels, restricted to `id_length_limit` characters in total |
+| id_full              | ID string not restricted in length                                                                 |
+| project_name         | Normalized project_name                                                                            |
+| environment          | Normalized environment                                                                             |
+| aws_estate           | Normalized aws_estate                                                                              |
+| stage                | Normalized stage                                                                                   |
+| delimiter            | Delimiter between `project_name`, `aws_estate`, `environment`, `stage`, and `attributes`           |
+| attributes           | List of attributes                                                                                 |
+| tags                 | Normalized Tag map                                                                                 |
+| additional_tag_map   | The merged additional_tag_map                                                                      |
+| label_order          | The naming order actually used to create the ID                                                    |
+| regex_replace_chars  | The regex_replace_chars actually used to create the ID                                             |
+| id_length_limit      | The id_length_limit actually used to create the ID, with `0` meaning unlimited                     |
+| tags_as_list_of_maps | This is a list with one map for each `tag`                                                         |
+| descriptors          | Map of descriptors as configured by `descriptor_formats`                                           |
+| normalized_context   | Normalized context of this module                                                                  |
+| context              | Merged but otherwise unmodified input to this module, to be used as context input to other modules |
