@@ -168,30 +168,29 @@ This is customised version of `label` module from cloudposse. Courtesy: [cloudpo
 
 # Usage example of this module
 
-1. Copy `context.tf` file from https://github.com/bigfantech-cloud/terraform-null-label/blob/main/exports/ and place it along with your Terraform configs.
-
-2. Start refering to the null-label outputs in your Terrafrom config.
-
 Refer to `example` folder in this repo.
+
+1. Copy `context.tf` file from https://github.com/bigfantech-cloud/terraform-null-label/blob/main/exports/ and place it along with your Terraform configs.
+2. Start refering to the null-label outputs in your Terrafrom config.
 
 ### Outputs
 
-| Name                 | Description                                                                                        |
-| -------------------- | -------------------------------------------------------------------------------------------------- |
-| id                   | String created combining all the input labels, restricted to `id_length_limit` characters in total |
-| id_full              | ID string not restricted in length                                                                 |
-| project_name         | Normalized project_name                                                                            |
-| environment          | Normalized environment                                                                             |
-| aws_estate           | Normalized aws_estate                                                                              |
-| stage                | Normalized stage                                                                                   |
-| delimiter            | Delimiter between `project_name`, `aws_estate`, `environment`, `stage`, and `attributes`           |
-| attributes           | List of attributes                                                                                 |
-| tags                 | Normalized Tag map                                                                                 |
-| additional_tag_map   | The merged additional_tag_map                                                                      |
-| label_order          | The naming order actually used to create the ID                                                    |
-| regex_replace_chars  | The regex_replace_chars actually used to create the ID                                             |
-| id_length_limit      | The id_length_limit actually used to create the ID, with `0` meaning unlimited                     |
-| tags_as_list_of_maps | This is a list with one map for each `tag`                                                         |
-| descriptors          | Map of descriptors as configured by `descriptor_formats`                                           |
-| normalized_context   | Normalized context of this module                                                                  |
-| context              | Merged but otherwise unmodified input to this module, to be used as context input to other modules |
+| Name                   | Description                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------- |
+| `id`                   | String created combining all the input labels, restricted to `id_length_limit` characters in total |
+| `id_full`              | ID string not restricted in length                                                                 |
+| `project_name`         | Normalized project_name                                                                            |
+| `environment`          | Normalized environment                                                                             |
+| `aws_estate`           | Normalized aws_estate                                                                              |
+| `stage`                | Normalized stage                                                                                   |
+| `delimiter`            | Delimiter between `project_name`, `aws_estate`, `environment`, `stage`, and `attributes`           |
+| `attributes`           | List of attributes                                                                                 |
+| `tags`                 | Normalized Tag map                                                                                 |
+| `additional_tag_map`   | The merged additional_tag_map                                                                      |
+| `label_order`          | The naming order actually used to create the ID                                                    |
+| `regex_replace_chars`  | The regex_replace_chars actually used to create the ID                                             |
+| `id_length_limit`      | The id_length_limit actually used to create the ID, with `0` meaning unlimited                     |
+| `tags_as_list_of_maps` | This is a list with one map for each `tag`                                                         |
+| `descriptors`          | Map of descriptors as configured by `descriptor_formats`                                           |
+| `normalized_context`   | Normalized context of this module                                                                  |
+| `context`              | Merged but otherwise unmodified input to this module, to be used as context input to other modules |
