@@ -172,33 +172,7 @@ This is customised version of `label` module from cloudposse. Courtesy: [cloudpo
 
 2. Start refering to the null-label outputs in your Terrafrom config.
 
-```
-provider "aws {
-  region = "us-east-1"
-}
-
-module "network" {
-  source      = "bigfantech-cloud/network/aws"
-  version     = "1.0.0"
-
-  vpc_cidr       = "10.0.0.0/20"
-  project_name   = "abc"
-  environment    = "dev"
-  attributes     = ["test", "bucket"]
-}
-
-resource "aws_s3_bucket" "default" {
-  bucket        = module.this.id # This will get "abc-dev-test-bucket"
-
-  tags = merge(
-    module.this.tags,
-    {
-      "Name" = "${module.this.id}"
-    },
-  )
-}
-
-```
+Refer to `example` folder in this repo.
 
 ### Outputs
 
