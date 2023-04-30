@@ -17,9 +17,9 @@ This is customised version of `label` module from cloudposse. Courtesy: [cloudpo
 
 ### Required Variables
 
-| Name         | Description                                                                                                    |
-| ------------ | -------------------------------------------------------------------------------------------------------------- |
-| project_name | ID element. Usually an abbreviation of project or brand name, to help ensure generated IDs are globally unique |
+| Name           | Description                                                                                                    |
+| -------------- | -------------------------------------------------------------------------------------------------------------- |
+| `project_name` | ID element. Usually an abbreviation of project or brand name, to help ensure generated IDs are globally unique |
 
 ### Optional Variables
 
