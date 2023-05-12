@@ -8,7 +8,6 @@ module "network" {
   vpc_cidr     = "10.0.0.0/20"
   project_name = "abc"
   environment  = "dev"
-  attributes   = ["test", "bucket"]
 }
 
 resource "aws_s3_bucket" "default" {
