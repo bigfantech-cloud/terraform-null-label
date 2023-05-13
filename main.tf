@@ -51,8 +51,8 @@ locals {
     # modules tack on attributes (passed by var) to the end of the list (passed by context)
     attributes = compact(distinct(concat(coalesce(var.context.attributes, []), coalesce(var.attributes, []))))
     tags       = merge(var.context.tags, var.tags)
-    name        = var.name == null ? var.context.name : var.name
-    namespace   = var.project_name == null ? var.context.project_name : var.project_name
+    name       = null
+    namespace  = var.project_name == null ? var.context.project_name : var.project_name
 
     additional_tag_map  = merge(var.context.additional_tag_map, var.additional_tag_map)
     label_order         = var.label_order == null ? var.context.label_order : var.label_order
@@ -186,5 +186,4 @@ locals {
     name                = local.name
     namespace           = local.namespace
   }
-
 }

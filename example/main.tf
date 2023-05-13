@@ -13,5 +13,5 @@ module "network" {
 resource "aws_s3_bucket" "default" {
   bucket = module.this.id # ID will get "abc-dev-test-bucket"
 
-  tags = module.this.tags, # tags will get { Project_name = "abc", Environment = "dev", attributes = ["test", "bucket"] }
+  tags = module.this.tags # tags will get { Project_name = "abc", Environment = "dev", attributes = ["test", "bucket"] }
 }
